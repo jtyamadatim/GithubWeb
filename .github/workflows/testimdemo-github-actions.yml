@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: testim-github-actions
 on: [push]
 jobs:
   run-testimio-cli:
