@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  run-testimio-cli:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,3 +10,4 @@ jobs:
           node-version: '14'
       - run: npm install -g @testim/testim-cli 
       - run: testim --version
+      - run: testim --token "O5Vu1khya5dukXveMDzynhlyyr20wzeKyk2IEhQb9fPHz1xd51" --project "xtE0dtINhdJ1YSGmv5Mu" --grid "Testim-Grid" --result-label "githubactionsExample" --turbo-mode
