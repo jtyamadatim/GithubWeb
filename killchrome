@@ -2,7 +2,6 @@
 
 myURL=$1
 
-git commit -m 'Fixed project to compile with new version of grade 7.0'
 
 function killChromeProcesses() {
 
