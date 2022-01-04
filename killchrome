@@ -2,6 +2,7 @@
 
 myURL=$1
 
+# example comment
 
 function killChromeProcesses() {
 
