@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites>
+  <testsuite name="LoginValidation with config 'LinuxChrome'" tests="1" failure="0" timestamp="2021-11-24T17:45:03.423Z" skipped="0" failure-evaluating="0">
+    <testcase name="login - 1 / 1 Data set" classname="testim.io.test" time="21.553" ownedBy="Ian Flanagan" ownerEmail="ian@testim.io">
+      <system-out>https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=gCEmcgsK1Z1yJ6R8</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="LoginValidation with config 'IEwindows10'" tests="1" failure="1" timestamp="2021-11-24T17:45:03.424Z" skipped="0" failure-evaluating="0">
+    <testcase name="login - 1 / 1 Data set" classname="testim.io.test" time="58.496" ownedBy="Ian Flanagan" ownerEmail="ian@testim.io">
+      <failure message="Step Failed: Element not found More info at: https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=32EXAkLTNrF6Ppfd"/>
+      <system-out>https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=32EXAkLTNrF6Ppfd</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="LoginValidation with config 'windows8Edge'" tests="1" failure="0" timestamp="2021-11-24T17:45:03.424Z" skipped="0" failure-evaluating="0">
+    <testcase name="login - 1 / 1 Data set" classname="testim.io.test" time="31.433" ownedBy="Ian Flanagan" ownerEmail="ian@testim.io">
+      <system-out>https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=dISFlE3cLYXcISr5</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="LoginValidation with config 'FFwindows81'" tests="1" failure="0" timestamp="2021-11-24T17:45:03.424Z" skipped="0" failure-evaluating="0">
+    <testcase name="login - 1 / 1 Data set" classname="testim.io.test" time="20.755" ownedBy="Ian Flanagan" ownerEmail="ian@testim.io">
+      <system-out>https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=RLjwGUJQoGmmgzYB</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="LoginValidation with config 'BigSurSafari'" tests="1" failure="0" timestamp="2021-11-24T17:45:03.424Z" skipped="0" failure-evaluating="0">
+    <testcase name="login - 1 / 1 Data set" classname="testim.io.test" time="23.75" ownedBy="Ian Flanagan" ownerEmail="ian@testim.io">
+      <system-out>https://app.testim.io/#/project/xtE0dtINhdJ1YSGmv5Mu/branch/master/test/s8eko7hasSGliDnk?result-id=0AF6XMVGe9NVBsMF</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

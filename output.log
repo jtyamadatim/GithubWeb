@@ -1,0 +1,9 @@
+PING new-fp-shed.wg1.b.yahoo.com (74.6.231.20): 56 data bytes
+64 bytes from 74.6.231.20: icmp_seq=0 ttl=48 time=63.330 ms
+64 bytes from 74.6.231.20: icmp_seq=1 ttl=48 time=55.182 ms
+64 bytes from 74.6.231.20: icmp_seq=2 ttl=48 time=49.063 ms
+64 bytes from 74.6.231.20: icmp_seq=3 ttl=48 time=61.797 ms
+
+--- new-fp-shed.wg1.b.yahoo.com ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 49.063/57.343/63.330/5.677 ms

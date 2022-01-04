@@ -1,0 +1,52 @@
+#!/bin/bash
+
+myURL="www.yahoo.com"
+myDelay=2
+myCount=4
+myFile="output.log"
+
+
+function pingTest() {
+
+	echo "Starting ping test"
+	ping -c $myCount $myURL | tee $myFile
+
+}
+
+function checkifFileExists() {
+
+	if [ -f "$myFile" ]; then
+	    echo "$myFile exists."
+	    rm -rf $myFile
+	    
+	else 
+		echo "$myFile Doesnt exist"
+		
+	fi
+
+}
+
+function parseFile() {
+
+	echo "Parsing file now"
+
+	myoutput=$(cat $myFile | grep "4 packets")
+    
+    echo "myoutput = " $myoutput
+	packetsSent=$( cat $myoutput | awk '{ print $1}')
+	packetsReceived=$(cat $myoutput | awk '{ print $4}')
+	packetLossPercentage=$(cat $myoutput | awk '{ print $7}')
+	# echo "Packets Sent: " $packetsSent "Packets Received: " $packetsReceived " packetLossPercentage: " $packetLossPercentage
+    echo "Packets Sent: $packetsSent"
+
+
+}
+
+function main() {
+
+	checkifFileExists
+	pingTest
+	parseFile
+}
+
+main

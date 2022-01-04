@@ -1,0 +1,12 @@
+#!/bin/bash
+
+myName=$1
+
+echo "The number of arguments passed to the script is: $#"
+
+for ITEM in "$@"
+do
+    echo $ITEM
+done
+
+ping $1 

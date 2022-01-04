@@ -1,0 +1,41 @@
+#!/bin/bash
+
+myURL=$1
+
+git commit -m 'Fixed project to compile with new version of grade 7.0'
+
+function killChromeProcesses() {
+
+echo "Starting to kill all chrome processes on system"
+
+for PROCESSID in $(ps aux | grep "Google Chrome" | awk '{print $2}')
+do
+        kill -9 $PROCESSID
+        echo "I killed this chrome process:" $PROCESSID
+done
+
+echo "Starting Chrome now"
+echo "Open " $1 " URL now"
+open -a "Google Chrome" $1
+
+}
+
+function main() {
+
+        if [ -n "$1" ]; then
+
+                killChromeProcesses   
+        else
+                echo "Syntax: ./killchrome <yourURL example: https://www.google.com>"
+                exit 1
+        fi
+
+}
+
+main
+
+
+
+
+
+

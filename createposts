@@ -1,0 +1,20 @@
+#!/bin/bash
+
+numberofposts=100
+myfile=posts
+ 
+echo "\"posts\": [" >> $myfile
+
+for i in {1..100}
+#for i in $numberofposts
+do
+   echo "Welcome $i times"
+   echo         "{" >> $myfile
+   echo            "\"postHeader\": 'This is a sanctioned test post #$i'," >> $myfile
+   echo       "\"postingDetails\": 'This is a test and not a real post. Please Ignore.  There will be no more than $i  of these as long as nobody comments and they can be deleted.  If you need official confirmation of this, please email me and I will provide contact details.'," >> $myfile 
+   echo    "\"numCommentsToAdd\" : 2" >> $myfile
+          echo "}," >> $myfile
+                
+done
+
+echo "]" >> $myfile

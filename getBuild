@@ -1,0 +1,65 @@
+#!/bin/bash 
+
+# Author: Ian Flanagan 2021
+
+# Define Variables 
+myDelay=2
+file=build.log
+
+function getCurrentBuildNumber() {
+
+	if [ -f $file ]; then 
+
+		echo "File: " $file " exists!"
+		currentbuild=$(cat $file)
+		echo "currentBuild: " $currentbuild
+		
+	else 
+		echo "File: " $file " does not exist, lets create it!"
+		touch $file 
+		echo "1" > $file
+		return 1
+
+	fi	
+
+}
+
+function updateBuildNumber() {
+
+newBuildNumber=$(($currentbuild + 1))
+echo "New build Number is :" $newBuildNumber
+
+}
+
+function updateBuildNumberFile() {
+
+	if [ -f $file ]; then 
+
+		echo "File: " $file " exists!"
+		echo $newBuildNumber > $file
+		echo "Updated File: " $file " to have new build number of: " $newBuildNumber
+		
+	else 
+		echo "File: " $file " does not exist!"
+		return 1
+
+	fi	
+
+
+}
+
+function main() {
+
+	echo "Starting script to update the build number"
+
+
+	getCurrentBuildNumber
+	updateBuildNumber
+	updateBuildNumberFile
+}
+
+# call Functions 
+
+main
+
+

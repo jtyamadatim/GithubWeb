@@ -1,0 +1,13 @@
+#!/bin/bash
+
+my_array=(QA Staging Dev Production)
+
+
+echo "the array contains ${#my_array[@]} elements"
+count=${#my_array[@]}
+
+echo "Count: " $count
+
+number=$(( ( RANDOM % $count )  + 1 ))
+
+echo "Random Value is: " ${#my_array[$number]} 
