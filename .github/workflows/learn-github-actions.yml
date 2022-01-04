@@ -10,4 +10,4 @@ jobs:
           node-version: '14'
       - run: npm install -g @testim/testim-cli 
       - run: testim --version
-      - run: testim --label "githubactions" --token "O5Vu1khya5dukXveMDzynhlyyr20wzeKyk2IEhQb9fPHz1xd51" --project "xtE0dtINhdJ1YSGmv5Mu" --grid "Testim-Grid" --result-label "githubactionsExample" --turbo-mode
+      - run: testim --label "githubactions" --token ${{ secrets.TESTIM_TOKEN }} --project ${{ secrets.TESTIM_PROJECTID }} --grid "Testim-Grid" --result-label "githubactionsExample" --turbo-mode 
