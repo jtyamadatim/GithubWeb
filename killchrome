@@ -2,6 +2,7 @@
 
 myURL=$1
 
+# Author: Ian Flanagan 
 
 function killChromeProcesses() {
 
