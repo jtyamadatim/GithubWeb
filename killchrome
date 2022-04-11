@@ -2,7 +2,7 @@
 
 myURL=$1
 
-# Add a comment for comments sake!!
+# Add a comment
 # Author: Ian Flanagan 
 
 function killChromeProcesses() {
