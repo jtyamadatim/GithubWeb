@@ -1,0 +1,10 @@
+#!/bin/bash
+
+myFile="test.txt"
+
+if [ -e $myFile ]
+then
+    echo "The File: " $myFile " exists "
+else
+    echo "The File:  " $myFile " does not exist."
+fi
