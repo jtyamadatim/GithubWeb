@@ -3,7 +3,6 @@
 # Author: Ian Flanagan
 
 myFile="test.txt"
-myURL ="https://github.com/iflanagan/GHActionsTestimExample/actions"
 
 if [ -e $myFile ]
 
@@ -14,7 +13,7 @@ then
 	git add .
 	git commit -m "Added this string $myRandomTxt to file."
 	git push -u origin main
-	open $myURL
+	open https://github.com/iflanagan/GHActionsTestimExample/actions
 else
     echo "The File:  " $myFile " does not exist."
     echo "The File: " $myFile " exists "  
