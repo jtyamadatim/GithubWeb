@@ -9,7 +9,7 @@ if [ -e $myFile ]
 then
     echo "The file: " $myFile " does exist."
     myRandomTxt=$(openssl rand -hex 20)
-    echo "This is a: " $myRandomTxt " test again" >> $myFile
+    echo "This is a: " $myRandomTxt " test again" > $myFile
 	git add .
 	git commit -m "Added this string $myRandomTxt to file."
 	git push -u origin main
