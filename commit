@@ -3,6 +3,7 @@
 # Author: Ian Flanagan
 
 myFile="test.txt"
+myDelay=5
 
 if [ -e $myFile ]
 
@@ -13,7 +14,9 @@ then
 	git add .
 	git commit -m "Added this string $myRandomTxt to file."
 	git push -u origin main
+	sleep $myDelay
 	open https://github.com/iflanagan/GHActionsTestimExample/actions
+	xdotool key ctrl+r
 else
     echo "The File:  " $myFile " does not exist."
     echo "The File: " $myFile " exists "  
@@ -23,4 +26,7 @@ else
 	git add .
 	git commit -m "Added file."
 	git push -u origin main
+	sleep $myDelay
+	open https://github.com/iflanagan/GHActionsTestimExample/actions
+	xdotool key ctrl+r
 fi
