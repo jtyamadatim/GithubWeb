@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Author: Ian Flanagan
+
+myFile="test.txt"
+
+if [ -e $myFile ]
+
+then
+    echo "The file: " $myFile " does exist."
+
+else
+    echo "The File:  " $myFile " does not exist."
+    echo "The File: " $myFile " exists "  
+	echo "Lets add a file"
+	touch myFile
+	echo "This is a test" > $myFile
+	git add .
+	git commit -m "Added file."
+	git push -u origin main
+fi
