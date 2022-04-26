@@ -16,7 +16,6 @@ then
 	git push -u origin main
 	sleep $myDelay
 	open https://github.com/iflanagan/GHActionsTestimExample/actions
-	xdotool key ctrl+r
 else
     echo "The File:  " $myFile " does not exist."
     echo "The File: " $myFile " exists "  
@@ -28,5 +27,4 @@ else
 	git push -u origin main
 	sleep $myDelay
 	open https://github.com/iflanagan/GHActionsTestimExample/actions
-	xdotool key ctrl+r
 fi
