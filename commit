@@ -8,17 +8,17 @@ myDelay=5
 if [ -e $myFile ]
 
 then
-    echo "The file: " $myFile " does exist."
-    myRandomTxt=$(openssl rand -hex 20)
-    echo "This is a: " $myRandomTxt " test again" > $myFile
+    	echo "The file: " $myFile " does exist."
+    	myRandomTxt=$(openssl rand -hex 20)
+    	echo "This is a: " $myRandomTxt " test again" > $myFile
 	git add .
 	git commit -m "Added this string $myRandomTxt to file."
 	git push -u origin main
 	sleep $myDelay
 	open https://github.com/iflanagan/GHActionsTestimExample/actions
 else
-    echo "The File:  " $myFile " does not exist."
-    echo "The File: " $myFile " exists "  
+    	echo "The File:  " $myFile " does not exist."
+    	echo "The File: " $myFile " exists "  
 	echo "Lets add a file"
 	touch myFile
 	echo "This is a test" > $myFile
