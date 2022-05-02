@@ -6,15 +6,35 @@ myFile="test.txt"
 myDelay=5
 myURL=$1
 
+# pre-requisites you need to be on a machine there the github token has been inputed which allows
+# you to commit code without being prompted for a password. The token should have read/write access
+to the repo.
+
+# steps
+# 1. clone the repo git clone https://github.com/iflanagan/GHActionsTestimExample.git
+# 2. add a file to the repo and push it to your newly created repo 
+# 3. if you are on a mac or linux system run this command
+# 4. chmod 755 commit 
+# 5. clear; cd <yourdir>; ./commit <https://github.com/<githubuser>/<githubproject>/actions>
+
 # Define Functions 
 
 
 function updateRepo() {
 
+# two cases 
+# case 1: the file : test.txt does exist we then 
+# remove the contents and generate a new hash and add it to the file, commit the change 
+
+# case 2: the file test.txt does not exist, we create the file and then 
+# and generate a new hash and add it to the file, commit the change 
+
+
 
 if [ -e $myFile ]
 
 then
+
     	echo "The file: " $myFile " does exist."
     	myRandomTxt=$(openssl rand -hex 20)
     	echo "This is a: " $myRandomTxt " test again" > $myFile
