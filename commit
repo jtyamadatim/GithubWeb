@@ -4,10 +4,13 @@
 
 myFile="test.txt"
 myDelay=5
-#myURL="https://github.com/iflanagan/GHActionsTestimExample/actions"
 myURL=$1
 
-if [ -n "$1" ] ; then 
+# Define Functions 
+
+
+function updateRepo() {
+
 
 if [ -e $myFile ]
 
@@ -32,6 +35,15 @@ else
 		sleep $myDelay
 		open $myURL
 fi
+
+
+}
+
+
+
+if [ -n "$1" ] ; then 
+
+updateRepo
 
 else
   		echo "Syntax: ./commit <https://github.com/<githubuser>/<githubproject>/actions> "
