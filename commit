@@ -45,7 +45,6 @@ then
 		open $myURL
 else
     	echo "The File:  " $myFile " does not exist."
-    	echo "The File: " $myFile " exists "  
 		echo "Lets add a file"
 		touch myFile
 		echo "This is a test" > $myFile
