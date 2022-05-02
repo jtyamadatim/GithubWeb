@@ -8,7 +8,7 @@ myURL=$1
 
 # pre-requisites you need to be on a machine there the github token has been inputed which allows
 # you to commit code without being prompted for a password. The token should have read/write access
-to the repo.
+# to the repo.
 
 # steps
 # 1. clone the repo git clone https://github.com/iflanagan/GHActionsTestimExample.git
