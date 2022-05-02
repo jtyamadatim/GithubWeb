@@ -4,7 +4,10 @@
 
 myFile="test.txt"
 myDelay=5
-myURL="https://github.com/iflanagan/GHActionsTestimExample/actions"
+#myURL="https://github.com/iflanagan/GHActionsTestimExample/actions"
+myURL=$1
+
+if [ -n "$1" ] ; then 
 
 if [ -e $myFile ]
 
@@ -16,7 +19,6 @@ then
 		git commit -m "Added this string $myRandomTxt to file."
 		git push -u origin main
 		sleep $myDelay
-		# open https://github.com/iflanagan/GHActionsTestimExample/actions
 		open $myURL
 else
     	echo "The File:  " $myFile " does not exist."
@@ -28,6 +30,10 @@ else
 		git commit -m "Added file."
 		git push -u origin main
 		sleep $myDelay
-		# open https://github.com/iflanagan/GHActionsTestimExample/actions
 		open $myURL
 fi
+
+else
+  		echo "Syntax: ./commit <https://github.com/<githubuser>/<githubproject>/actions> "
+  		exit 1
+	fi
