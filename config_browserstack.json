@@ -1,0 +1,7 @@
+{
+    "browserstack.console": "info",
+    "browserstack.networkLogs": true,
+    "browserstack.video": true,
+    "browserstack.timezone": "Chicago",
+    "browserstack.local" : "true"
+}
