@@ -1,4 +1,4 @@
-  name: testim-github-actions
+name: testim-github-actions
 on: [push]
 jobs:
   run-testimio-cli:
@@ -10,5 +10,5 @@ jobs:
           node-version: '14'
       - run: npm install -g @testim/testim-cli 
       - run: testim --version
-      - run: testim --test-plan "GitHubActions" --parallel 5 --mode "selenium"  --token ${{ secrets.TESTIM_TOKEN }} --project ${{ secrets.TESTIM_PROJECTID }} --grid "Testim-Grid" --result-label ${{github.run_number}} --turbo-mode 
+      - run: testim --label "githubactions" --token ${{ secrets.TESTIM_TOKEN }} --project ${{ secrets.TESTIM_PROJECTID }} --grid "Testim-Grid" --result-label ${{github.run_number}} --turbo-mode 
 
