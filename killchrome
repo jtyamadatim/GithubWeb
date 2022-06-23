@@ -16,20 +16,14 @@ do
 done
 
 echo "Starting Chrome now"
-echo "Open " $1 " URL now"
-open -a "Google Chrome" $1
+open -a "Google Chrome" 
 
 }
 
 function main() {
 
-        if [ -n "$1" ]; then
 
                 killChromeProcesses   
-        else
-                echo "Syntax: ./killchrome <yourURL example: https://www.google.com>"
-                exit 1
-        fi
 
 }
 
