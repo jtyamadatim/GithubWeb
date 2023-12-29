@@ -21,9 +21,9 @@ const fileDir = "//Users//tomerli//TestimReports//"; // Modify as needed
 const _TESTS = new Map();
 
 exports.config = {
-    grid: "Testim-Grid",
-    project: "8iuIg6jOYNgj5YnNs5RJ",
-    token: "YourTokenHere",
+    grid: "Virtual Mobile Grid",
+    project: "RiuO9ZV8b7ZhHsXRPouY",
+    token: "4bXNL1am4jLDGLXjsp1bBnJtCByOTfFcPdADgopyzMBR8pXix8",
     branch: "master",
 
     // Appium specific configuration
@@ -35,12 +35,6 @@ exports.config = {
     // Initialize Appium driver
     beforeSuite: async function() {
         this.driver = wd.promiseChainRemote(this.config.appium);
-        await this.driver.init({
-            platformName: 'Android',
-            deviceName: 'YourDeviceName',
-            app: 'path/to/your/app.apk',
-            // Add other desired capabilities as needed
-        });
     },
 
     afterTest: function(test) {
