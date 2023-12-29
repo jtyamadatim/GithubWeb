@@ -10,5 +10,5 @@ jobs:
           node-version: '20.10.0'
       - run: npm install -g @testim/testim-cli 
       - run: testim --version
-      - run: testim --test-plan "Demo Plan" --mode "appium" --token "4bXNL1am4jLDGLXjsp1bBnJtCByOTfFcPdADgopyzMBR8pXix8" --project "RiuO9ZV8b7ZhHsXRPouY" --result-label ${{github.run_number}} --config-file myConfigV2.js
+      - run: testim --test-plan "Demo Plan" --mode "appium" --token "4bXNL1am4jLDGLXjsp1bBnJtCByOTfFcPdADgopyzMBR8pXix8" --project "RiuO9ZV8b7ZhHsXRPouY" --result-label ${{github.run_number}} --config-file mobileReportConfig.js
 
