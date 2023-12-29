@@ -1,43 +1,38 @@
-const axios = require('axios');
-const fs = require('fs');
-const wd = require('wd'); // Appium client for Node.js
-const path = require('path');
-const imageDataURI = require('image-data-uri');
-
-// Check if required modules exist
 checkifModuleExists('axios');
 checkifModuleExists('fs');
 checkifModuleExists('wd');
 checkifModuleExists('path');
 checkifModuleExists('image-data-uri');
 
-// Date parameter setup
-var myDate = new Date(Date.now());
-const dateFormatted = formatDate(myDate);
+//need to install the following node modules
+const axios = require('axios');
+const fs = require('fs');
+const wd = require('wd');
+const path = require('path');
+const imageDataURI = require('image-data-uri');
 
-const fileDir = "//Users//tomerli//TestimReports//"; // Modify as needed
+
+//date parameter in this format : YYYY-MM-DDTHH-MM
+var myDate = new Date(Date.now());
+dateMonth = (myDate.getMonth() + 1 < 10 ? '0' : '') + (myDate.getMonth() +1);
+dateDay = (myDate.getDate() < 10 ? '0' : '') + myDate.getDate();
+dateHour = (myDate.getHours() < 10 ? '0' : '') + myDate.getHours();
+dateMin = (myDate.getMinutes() < 10 ? '0' : '') + myDate.getMinutes();
+dateSec = (myDate.getSeconds() < 10 ? '0' : '') + myDate.getSeconds();
+const dateFormatted = myDate.getFullYear() + '-' + dateMonth + '-' + dateDay + 'T' + dateHour + '-' + dateMin;
+
+const fileDir = "C:\\Temp\\TestimReports\\"; // or "C:\\Temp\\TestimReports\\" for Win users
 
 // Hash table with entries of type: <testId>: <resultId>
 const _TESTS = new Map();
 
 exports.config = {
-    grid: "Virtual Mobile Grid",
-    project: "RiuO9ZV8b7ZhHsXRPouY",
-    token: "4bXNL1am4jLDGLXjsp1bBnJtCByOTfFcPdADgopyzMBR8pXix8",
-    branch: "master",
-
-    // Appium specific configuration
-    appium: {
-        host: 'localhost',
-        port: 4723
-    },
-
-    // Initialize Appium driver
-    beforeSuite: async function() {
-        this.driver = wd.promiseChainRemote(this.config.appium);
-    },
-
-    afterTest: function(test) {
+    grid:       "Virtual Mobile Grid",
+    project:    "RiuO9ZV8b7ZhHsXRPouY",
+    token:      "4bXNL1am4jLDGLXjsp1bBnJtCByOTfFcPdADgopyzMBR8pXix8",
+    branch:     "master",
+    
+    afterTest (test) {
         _TESTS.set(test.testId, test.resultId);
     },
 
@@ -130,13 +125,14 @@ exports.config = {
             
         }
     }
-};
+}
+
 
 // fetch test result from Testim
 async function testim_fetch_result (resultId) {
 
     console.log("resultId: " + resultId);
-    const api_key = "PAK-twbY8mg6LrE00g-KShnvn6RPatIDH3ngpsx4lLt39YnH0KocMTSLsPKGOa9uYFIe9Rcwju4GChAz5voX8";
+    const api_key = "PAK-3+bh85bqN7LPJH-KSO7fGUkTubTPmrp8jG3fuKNCPl4a6sKGNAk9fFd+4S/xQwVNw4sq2PqYH3/TvXNZ3";
     const url     = "https://api.testim.io/runs/tests/" + resultId + "?stepsResults=true";
     
     return axios(url, {
@@ -181,7 +177,7 @@ async function createPDFReport (testId, testResult) {
     (async () => {
         try{
             // Create browser instance
-            const browser = await puppeteer.launch({headless: 'new'});
+            const browser = await wd.launch({headless: 'new'});
         
             // Create a new page
             const page = await browser.newPage();
@@ -209,32 +205,32 @@ async function createPDFReport (testId, testResult) {
             console.log("Error: " + error);
         }
     })();
+
     
 }
 
 function checkifModuleExists(module) {
     const { exec } = require('child_process');
+    // define the module name to check and install
     const moduleName = module;
+    // check if the module is installed
     exec(`npm list ${moduleName}`, (err, stdout, stderr) => {
         if (err) {
+            // the module is not installed, so install it
             console.log(`Installing ${moduleName}...`);
             exec(`npm install ${moduleName}`, (err, stdout, stderr) => {
-                if (err) {
-                    console.error(`Error installing ${moduleName}: ${err}`);
-                } else {
-                    console.log(`${moduleName} installed successfully`);
-                }
+            if (err) {
+                console.error(`Error installing ${moduleName}: ${err}`);
+            } else {
+                console.log(`${moduleName} installed successfully`);
+            }
             });
         } else {
+            // the module is already installed
             console.log(`${moduleName} is already installed`);
         }
     });
 }
 
-function formatDate(date) {
-    const dateMonth = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() +1);
-    const dateDay = (date.getDate() < 10 ? '0' : '') + date.getDate();
-    const dateHour = (date.getHours() < 10 ? '0' : '') + date.getHours();
-    const dateMin = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-    return date.getFullYear() + '-' + dateMonth + '-' + dateDay + 'T' + dateHour + '-' + dateMin;
-}
+
+
